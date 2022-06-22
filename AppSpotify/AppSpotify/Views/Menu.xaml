@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSpotify.Views.Menu"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+            
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <StackLayout.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="30,10,30,0"/>
+                            <On Platform="iOS" Value="30,70,30,0"/>
+                        </OnPlatform>
+                    </StackLayout.Padding>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                        <StackLayout.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android" Value="true" />
+                                <On Platform="iOS" Value="false" />
+                            </OnPlatform>
+                        </StackLayout.IsVisible>
+                        <Image Source="icon_chevron_down" VerticalOptions="Center" HorizontalOptions="Start">
+                        </Image>
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                            <Label Text="NOW PLAYING FROM PLAYLIST" TextColor="#FFF" FontSize="12" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                            <Label Text="Top 50 Songs" Margin="0,-5,0,0" TextColor="#FFF" FontSize="12" HorizontalTextAlignment="Center" HorizontalOptions="Fill" />
+                        </StackLayout>
+                        <Image Source="icon_playlist" VerticalOptions="Center" HorizontalOptions="End" />
+                    </StackLayout>
+                    <Image Source="song.jpg" VerticalOptions="Center">
+                        <Image.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android" Value="300" />
+                                <On Platform="iOS" Value="325" />
+                            </OnPlatform>
+                        </Image.HeightRequest>
+                    </Image>
+                    <Grid Margin="0,20,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icon_plus" Grid.Column="0" HorizontalOptions="Center" />
+                        <StackLayout Grid.Column="1" HorizontalOptions="Center">
+                            <Label Text="Break My Heart" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"  FontSize="18" TextColor="White" />
+                            <Label Margin="0,-5,0,0" Text="Dua Lipa" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="14" TextColor="#adaeb2" />
+                        </StackLayout>
+                        <Image Source="icon_ellipsis" Grid.Column="2" HorizontalOptions="Center" />
+                    </Grid>
+                    <ContentView>
+                        <ContentView.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android" Value="false"/>
+                                <On Platform="iOS" Value="true"/>
+                            </OnPlatform>
+                        </ContentView.IsVisible>
+                    </ContentView>
+                    <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
+                        <StackLayout.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android" Value="true"/>
+                                <On Platform="iOS" Value="false"/>
+                            </OnPlatform>
+                        </StackLayout.IsVisible>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Image VerticalOptions="Center" Margin="0,0,30,0" Source="button_shuffle" />
+                        <Image VerticalOptions="Center" Source="button_back" />
+                        <Image VerticalOptions="Center" Source="button_play">
+                        </Image>
+                        <Image VerticalOptions="Center" Source="button_forward" />
+                        <Image VerticalOptions="Center" Margin="30,0,0,0" Source="button_repeat" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android" Value="0,0,0,0"/>
+                                <On Platform="iOS" Value="0,10,0,0"/>
+                            </OnPlatform>
+                        </StackLayout.Margin>
+                        <Image Source="icon_devices" WidthRequest="20" />
+                        <Label TextColor="White" HorizontalTextAlignment="Center" Margin="-5,0,0,0" FontSize="11" Text="Devices Available" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ContentPage.Content>
+</ContentPage>

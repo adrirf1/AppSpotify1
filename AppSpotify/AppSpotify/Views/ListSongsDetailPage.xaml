@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppSpotify.Views.ListSongsDetailPage">
+    <ContentPage.Content>
+        <ListView
+            Margin="0, 0, 0, 0"
+            ItemsSource="{Binding Songs}"
+            SelectedItem="{Binding SongSelected}">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Image
+                        VerticalOptions="Fill"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="150"
+                        
+                        Aspect="AspectFill"
+                        Source="gas03.jpg"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Margin="20, 0, 0, 0"
+                            Orientation="Horizontal"
+                            HorizontalOptions="FillAndExpand">
+                            <Image
+                                Margin="5, 5, 5, 5"
+                                Grid.RowSpan="2"
+                                HeightRequest="100"
+                                Source="{Binding ImageBase64, Converter={StaticResource ImageConverter}}" />
+                            <Label
+                                Text="{Binding SongName}"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="StartAndExpand" />
+                            <Label
+                                Text="{Binding Singer}"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="StartAndExpand" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

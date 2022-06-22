@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:converters="clr-namespace:AppSpotify.Converters"
+             x:Class="AppSpotify.Views.ListSongsPage"
+             NavigationPage.HasNavigationBar="True"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="ImageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Eliminar" Command="{Binding DeleteCommand}" />
+        <ToolbarItem Text="Guardar" Command="{Binding SaveCommand}"/>
+        <ToolbarItem Text="Mapa" Command="{Binding MapsCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Margin="20"
+                VerticalOptions="StartAndExpand">
+                <Label
+                    Text="Nombre de la cancion"
+                    TextColor="White"/>
+                <Entry
+                    Text="{Binding SongSelected.Name}"/>
+                <Label
+                    Text="Nombre del/la cantante"
+                        TextColor="White"/>
+                <Entry
+                    Text="{Binding SongSelected.Name}"/>
+                <Label
+                    Text="Ubicación"
+                    HorizontalOptions="CenterAndExpand" 
+                        TextColor="White"/>
+                <Label
+                    Text="Latitud"
+                        TextColor="White"/>
+                <Entry
+                    Text="" />
+                <Label
+                    Text="Longitud"
+                        TextColor="White"/>
+                <Entry
+                   
+                    Text="" />
+
+                <Label
+                    Text="Fotografia"
+                        TextColor="White"/>
+                <Image 
+                        Source="{Binding Picture, Converter={StaticResource ImageConverter}}"
+                        WidthRequest="100"/>
+                <Button
+                    Text="Tomar Fotografia"
+                        TextColor="White"
+                    Command="{Binding TakePictureCommand}"/>
+                <Button
+                    Text="Seleccionar Fotografia"
+                        TextColor="White"
+                    Command="{Binding SelectPictureCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

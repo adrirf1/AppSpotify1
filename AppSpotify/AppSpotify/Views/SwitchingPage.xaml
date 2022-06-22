@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:views="clr-namespace:AppSpotify.Views"
+            x:Class="AppSpotify.Views.SwitchingPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#171212"
+            BarTextColor="White">
+
+
+
+    <views:Menu 
+        Title="Cámara" 
+        
+        IconImageSource="casa.png"
+        BackgroundImageSource="gradient.png"/>
+
+    <views:ListSongsPage 
+        Title="Add" 
+        IconImageSource="mas.png"
+        BackgroundImageSource="gradient.png"
+        NavigationPage.HasNavigationBar="True"/>
+
+
+
+    <views:ListSongsDetailPage 
+        Title="Playlist" 
+        IconImageSource="libros.png"
+        BackgroundImageSource="gradient.png"/>
+
+    <views:LocationPage 
+        Title="Your Own CC" 
+        IconImageSource="pin.png"
+        BackgroundImageSource="gradient.png"/>
+
+</TabbedPage>
